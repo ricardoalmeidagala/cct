@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: cct
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+  cache:
+    redis:
+      time-to-live: 14400
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+  datasource:
+    url: jdbc:oracle:thin:@apps.zask.com.br:1521/XEPDB1
+    username: cct_plugin
+    password: cct_plugin
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+logging:
+  level:
+    root: DEBUG
+    org.hibernate: DEBUG
+    org.springframework.web: DEBUG
